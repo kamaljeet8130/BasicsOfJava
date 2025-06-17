@@ -1,16 +1,34 @@
-public class Main{
-    static void deleteElement(int arr[],int pos){
-        if(pos == arr.length-1)
-            arr[arr.length-1] = 0;
-        for (int i = pos;i<arr.length-1;i++){
-            arr[i] = arr[i+1];
-            arr[i+1] = 0;
-        }
-        for (int ar : arr){
-            System.out.print(ar + " ");
-        }
-    }
-    public static void main(String[] args) {
-        deleteElement(new int[]{2,8,4,3,18},4);
-    }
-}
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {3,2,1,2,2,3};
+//        System.out.println(arr.length);
+//        System.out.println(duplicateValue(arr,arr.length));
+////        System.out.println(peakIndexInMountainArray(arr,100));
+//    }
+//    public static int duplicateValue(int[] arr,int n){
+//        for (int i =0;i<n-1;i++){
+//            if(arr[Math.abs(arr[i])]<0){
+//                return i;
+//            }
+////            else arr[arr[i]]= - arr[arr[i]];
+//        }
+//        return -1;
+//    }
+//    public static int peakIndexInMountainArray(int[] arr,int target) {
+//        Arrays.sort(arr);
+//        int low = 0;
+//        int high =arr.length-1;
+//        while(low<high){
+//            int mid = low +((target-arr[low])*(high-low))/(arr[high]-arr[low]);
+//            if(target==arr[mid])
+//                return mid;
+//            else if(target>arr[mid])
+//                low = mid+1;
+//            else
+//                high=mid-1;
+//        }
+//        return -1;
+//    }
+//}
