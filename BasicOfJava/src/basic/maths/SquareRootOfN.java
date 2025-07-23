@@ -1,8 +1,8 @@
-package basic.array;
+package basic.maths;
 
 public class SquareRootOfN {
     public static void main(String[] args) {
-        mySqrt(29);
+        System.out.println(mySqrt(214729647));
     }
 
     public static int mySqrt(int x) {
@@ -27,4 +27,5 @@ public class SquareRootOfN {
         }
         return  ans;
     }
+
 }
