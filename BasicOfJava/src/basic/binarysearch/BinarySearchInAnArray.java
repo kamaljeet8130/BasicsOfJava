@@ -1,4 +1,4 @@
-package basic.array;
+package basic.binarysearch;
 
 public class BinarySearchInAnArray {
     public static int binraySearch(int[] array,int requiredElement){

@@ -1,7 +1,4 @@
-package basic.array;
-
-import java.util.ArrayList;
-import java.util.List;
+package basic.binarysearch;
 
 public class PivotElementInAnArray {
     public static void main(String[] args) {

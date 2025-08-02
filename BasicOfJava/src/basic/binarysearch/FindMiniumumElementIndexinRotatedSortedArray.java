@@ -1,4 +1,4 @@
-package basic.array;
+package basic.binarysearch;
 
 public class FindMiniumumElementIndexinRotatedSortedArray {
     public static void main(String[] args) {

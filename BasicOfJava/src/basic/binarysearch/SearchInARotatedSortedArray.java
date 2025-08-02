@@ -1,4 +1,4 @@
-package basic.array;
+package basic.binarysearch;
 
 public class SearchInARotatedSortedArray {
     public static void main(String[] args) {
