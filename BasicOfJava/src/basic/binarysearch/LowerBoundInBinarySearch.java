@@ -24,3 +24,4 @@ public class LowerBoundInBinarySearch {
         return ans;
     }
 }
+
