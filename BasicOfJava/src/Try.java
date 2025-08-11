@@ -2,20 +2,19 @@ import java.util.Arrays;
 
 public class Try {
     public static void main(String[] args) {
-        int[] arr=  {1,0,0,2,3};
-//        1,0,2,3,0,4,5,0
-        for(int i = 0;i<arr.length;i++){
-            if( arr[i] == 0) {
-                for(int j = arr.length-1;j>i;j--) {
-                    arr[j] = arr[j - 1];
-                }
+        int[] arr = {0, 1, 0};
+        Arrays.sort(arr);
+        System.out.println(findSingleOne(arr));
+    }
+    public static int findSingleOne(int[] arr){
+        for (int i = 0;i<arr.length;i++){
+            if(( (i!=arr.length-1) && (arr[i]^arr[i+1])==0) ){
                 i++;
             }
+            else {
+                return arr[i];
+            }
         }
-
-
-        for (int i : arr){
-            System.out.print(i+",");
-        }
+        return  arr[arr.length-1];
     }
 }
