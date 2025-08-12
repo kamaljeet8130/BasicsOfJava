@@ -1,20 +1,29 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Try {
     public static void main(String[] args) {
-        int[] arr = {0, 1, 0};
-        Arrays.sort(arr);
-        System.out.println(findSingleOne(arr));
-    }
-    public static int findSingleOne(int[] arr){
-        for (int i = 0;i<arr.length;i++){
-            if(( (i!=arr.length-1) && (arr[i]^arr[i+1])==0) ){
-                i++;
-            }
-            else {
-                return arr[i];
-            }
+        int[] arr ={1,2,2,4,4,4,4,4,4,4,4};
+        for (int i : firstAndLastOccurence(arr,4)){
+            System.out.print(i+",");
         }
-        return  arr[arr.length-1];
     }
+    public static int[] firstAndLastOccurence(int[]  nums, int target){
+        int[] arr =new int[2];
+        int first = -1;
+        int last = -1;
+        for(int i = 0;i<nums.length;i++){
+            if(nums[i]==target){
+                if(first==-1){
+                    first = i;
+                }
+                last = i;
+            }
+
+        }
+        arr[0] = first;
+        arr[1] = last;
+        return arr;
+    }
+
 }
