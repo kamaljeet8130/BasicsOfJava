@@ -2,63 +2,37 @@ package basic.binarysearch;
 
 public class MinimumDaysToMakeMBouquets {
     public static void main(String[] args) {
-        int[] bloomDay = {1,10,3,10,2};
-        int m = 3;
-        int k = 2;
-        System.out.println(minDays(bloomDay,m,k));
-
-
+        int[] arr= {1,2,5,9};
+        int threshold =6;
+        System.out.println(smallestDivisor(arr,threshold));
     }
-    public static int minDays(int[] bloomDay, int m, int k) {
-        if((long) m*k>bloomDay.length) return  -1;
-        int start = findMin(bloomDay);
-        int end = findMax(bloomDay);
-        int ans = -1;
-        while(start<=end){
-            int mid = start+(end-start)/2;
-            if(isFlowerBlooming(bloomDay,mid,m,k)){
+
+    public  static int smallestDivisor(int[] nums, int threshold) {
+        int start = Integer.MAX_VALUE;
+        int end = Integer.MIN_VALUE;
+        int ans = 0;
+        for(int i : nums){
+            start = Math.min(start,i);
+            end = Math.max(end,i);
+        }
+        while (start<=end){
+            int mid =start+(end-start)/2;
+            int count = doSomething(nums,mid);
+            if(count<=threshold){
                 ans = mid;
                 end = mid-1;
             }
             else{
-                start= mid+1;
+                start = mid+1;
             }
         }
         return ans;
     }
-    public static int findMin(int[] arr){
-        int min = Integer.MAX_VALUE;
-        for (int i =0;i<arr.length;i++){
-            if(arr[i]<min){
-                min = arr[i];
-            }
+    public static int doSomething(int[] nums,int mid){
+        int count = 0;
+        for (int i = 0;i<nums.length;i++){
+            count += (nums[i] + mid - 1) / mid;
         }
-        return min;
-    }
-    public static int findMax(int[] arr){
-        int max = Integer.MIN_VALUE;
-        for (int i =0;i<arr.length;i++){
-            if(arr[i]>max){
-                max = arr[i];
-            }
-        }
-        return max;
-    }
-    public static boolean isFlowerBlooming(int[] arr, int mid , int m ,int k){
-        int counter = 0;
-        int bouquetCounter = 0;
-        for(int i =0;i<arr.length;i++){
-            if(arr[i]<=mid){
-                counter++;
-            }
-            else if(arr[i]>mid){
-                counter =0;
-            }
-            if(counter==k){
-                counter=0;
-                bouquetCounter++;
-            }
-        }
-        return bouquetCounter >= m;
+        return count;
     }
 }
