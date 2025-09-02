@@ -1,0 +1,23 @@
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Build output
+out/
+target/
+build/
+
+# Logs and temp files
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Personal test file
+abc.txt
